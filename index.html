@@ -47,7 +47,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3, h4, p { margin: 0; }
 button { font: inherit; color: inherit; cursor: pointer; border: none; background: none; }
 
-
+/* Loading Screen */
 .loader {
     position: fixed; inset: 0; z-index: 99999;
     background: var(--navy);
@@ -92,7 +92,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
 }
 .container { width: min(1140px, 100%); margin-inline: auto; }
 
-
+/* Header */
 .header {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
     background: rgba(7, 13, 23, 0.8);
@@ -177,14 +177,14 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
     opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
 }
 
-
+/* Slide Label */
 .slide-label {
     position: fixed; bottom: 1.5rem; left: 1.5rem; z-index: 900;
     color: rgba(255,255,255,0.35); font-size: 0.7rem; font-weight: 700;
     letter-spacing: 0.2em; text-transform: uppercase; font-family: "Inter", sans-serif;
 }
 
-
+/* Progress Bar */
 .progress-bar {
     position: fixed; top: 0; left: 0; height: 3px;
     background: linear-gradient(90deg, var(--accent), var(--accent-light));
@@ -231,7 +231,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
 }
 .btn-outline:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.6); }
 
-
+/* SLIDE 1: HOME */
 .slide-home {
     background: var(--navy); color: var(--white); position: relative;
 }
@@ -382,7 +382,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
 }
 .explore-hint span { color: var(--accent); font-size: 1rem; }
 
-    
+/* Light slides */
 .slide-light { background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%); }
 .slide-white { background: var(--white); }
 .slide-dark {
@@ -392,13 +392,13 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
 .slide-dark h2, .slide-dark h3 { color: var(--white); }
 .slide-dark .section-heading h2 { font-size: 1.3rem; margin-bottom: 0.1rem; }
 
-    
+/* Section headings */
 .section-heading { max-width: 640px; margin: 0 auto 0.3rem; text-align: center; }
 .section-heading .eyebrow { justify-content: center; }
 .section-heading > p { margin-top: 0.15rem; color: var(--gray-600); font-size: 0.78rem; line-height: 1.4; }
 .slide-dark .section-heading > p { color: rgba(255,255,255,0.7); font-size: 0.85rem; line-height: 1.5; margin-top: 0.2rem; }
 
-
+/* SLIDE 2: ABOUT */
 .about-grid { display: grid; gap: 1.2rem; align-items: center; }
 .about-image { position: relative; }
 .about-image img {
@@ -418,7 +418,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
 .about-content p { color: var(--gray-600); line-height: 1.5; font-size: 0.82rem; }
 .about-content p + p { margin-top: 0.3rem; }
 
-
+/* Personal Info Cards */
 .personal-info {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 0.5rem;
 }
@@ -477,7 +477,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
     box-shadow: 0 8px 20px -6px rgba(244, 180, 26, 0.3);
 }
 
-
+/* Upload Placeholder Area */
 .upload-area {
     border: 2px dashed rgba(244, 180, 26, 0.25); border-radius: var(--radius-sm);
     padding: 0.5rem; text-align: center; background: rgba(255,255,255,0.03);
@@ -502,7 +502,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
     display: grid; place-items: center; color: rgba(255,255,255,0.25); font-size: 1.2rem;
 }
 
-
+/* Responsive */
 @media (min-width: 600px) {
     .about-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .achieve-grid { grid-template-columns: repeat(2, 1fr); }
@@ -561,7 +561,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
 <div class="slides-container">
   <div class="slides-track" id="slidesTrack">
 
-    
+    <!-- SLIDE 1: HOME -->
     <section class="slide slide-home" id="slide-0">
       <div class="hero-shapes"></div>
       <div class="hero-grid"></div>
@@ -583,7 +583,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
             <div class="hero-stat"><span class="num">100%</span><span class="label">Commitment</span></div>
           </div>
           <div class="hero-buttons">
-            <button class="btn btn-primary" onclick="goToSlide(1)">About Me</button>
+            <button class="btn btn-primary" onclick="goToSlide(1)">Personal Information</button>
             <button class="btn btn-outline" onclick="goToSlide(2)">Achievements</button>
           </div>
           <div class="hero-trust">
@@ -596,13 +596,13 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
       </div>
     </section>
 
-    
+    <!-- SLIDE 2: ABOUT -->
     <section class="slide slide-white" id="slide-1">
       <div class="slide-inner">
         <div class="container">
           <div class="section-heading">
             <div class="eyebrow">About Me</div>
-            <h2>Get to know me better</h2>
+            <h2>Personal Information</h2>
             <p>Learn more about my background, personal details, and what drives me forward.</p>
           </div>
           <div class="about-grid">
@@ -657,7 +657,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
       </div>
     </section>
 
-    
+    <!-- SLIDE 3: ACHIEVEMENTS -->
     <section class="slide slide-dark" id="slide-2">
       <div class="slide-inner">
         <div class="container">
@@ -667,7 +667,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
             <p>A showcase of my accomplishments in academic and athletic fields. Upload your certificates and photos below.</p>
           </div>
           <div class="achieve-grid">
-            
+            <!-- Education Achievement -->
             <div class="achieve-card">
               <div class="achieve-icon">🎓</div>
               <h3>Education Achievement</h3>
@@ -685,7 +685,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
               </div>
               
             </div>
-            
+            <!-- Sport Achievement -->
             <div class="achieve-card">
               <div class="achieve-icon">🏆</div>
               <h3>Sport Achievement</h3>
@@ -709,12 +709,12 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-
+// Loader
 window.addEventListener('load', () => {
     setTimeout(() => document.getElementById('loader').classList.add('hidden'), 600);
 });
 
-
+// Slide System
 const totalSlides = 3;
 let currentSlide = 0;
 const track = document.getElementById('slidesTrack');
@@ -727,7 +727,7 @@ const dotsContainer = document.getElementById('slideDots');
 
 const labels = ['Home', 'About', 'Achievements'];
 
-
+// Create dots
 labels.forEach((label, i) => {
     const dot = document.createElement('button');
     dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
@@ -763,13 +763,13 @@ function prevSlide() { goToSlide(currentSlide - 1); }
 prevBtn.addEventListener('click', prevSlide);
 nextBtn.addEventListener('click', nextSlide);
 
-
+// Keyboard navigation
 document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') nextSlide();
     if (e.key === 'ArrowLeft') prevSlide();
 });
 
-
+// Touch / Swipe support
 let touchStartX = 0;
 let touchEndX = 0;
 document.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
@@ -781,7 +781,7 @@ document.addEventListener('touchend', e => {
     }
 });
 
-
+// Image Preview for Uploads
 function previewImages(input, previewId) {
     const preview = document.getElementById(previewId);
     preview.innerHTML = '';
@@ -798,7 +798,7 @@ function previewImages(input, previewId) {
     }
 }
 
-
+// Initialize
 updateUI();
 </script>
 
