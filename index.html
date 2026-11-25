@@ -1118,6 +1118,26 @@ body[data-page="achievements"] { background: radial-gradient(900px 500px at 15% 
 .view[data-view="achievements"] .fmsg { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .view[data-view="achievements"] .page { overflow-y: auto; }
 .view[data-view="achievements"] .ach-wall { min-height: 300px; }
+
+/* home: bigger writing that fills the space */
+@media (min-width: 900px) {
+  .hero-copy { display: flex; flex-direction: column; justify-content: center; gap: clamp(.4rem, 1.6vh, 1.1rem); }
+  .hero-copy .hero-name { font-size: clamp(2.6rem, 6.4vh + 2.3vw, 6rem) !important; line-height: .98; }
+  .hero-copy .big { font-size: clamp(1.8rem, 4vh + 2.1vw, 4.2rem) !important; line-height: 1.08; }
+  .deal h2 { font-size: clamp(1.3rem, 3vh + .8vw, 2.2rem) !important; }
+  .deal-sub { font-size: clamp(.9rem, 1.8vh + .3vw, 1.25rem) !important; }
+  .tile .card-title { font-size: clamp(1rem, 2.2vh + .4vw, 1.5rem) !important; }
+  .tile .die { --die: clamp(44px, 7vh, 64px) !important; }
+  #rollBtn { font-size: clamp(.9rem, 1.8vh + .3vw, 1.15rem) !important; padding: .5rem 1.2rem !important; }
+}
+
+/* moving role line under "into code!" */
+.role-move { overflow: hidden; margin: 0; padding: .15em 0; }
+.role-move span { display: inline-block; font-family: var(--display, var(--sans)); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: clamp(1.2rem, 2.8vh + 1.2vw, 2.4rem); color: #fff; text-shadow: 0 3px 14px rgba(0,0,0,.45); animation: roleMove 5s cubic-bezier(.6,0,.3,1) infinite; }
+.role-move b { color: var(--gold); font-weight: 800; }
+@keyframes roleMove { 0% { transform: translateX(-110%); opacity: 0; } 18%, 72% { transform: none; opacity: 1; } 92%, 100% { transform: translateX(110%); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .role-move span { animation: none; } }
+@media (max-width: 899px) { .role-move span { font-size: clamp(1rem, 4.6vw, 1.5rem); } }
 </style>
     </head>
 <body data-page="home">
@@ -1150,16 +1170,8 @@ body[data-page="achievements"] { background: radial-gradient(900px 500px at 15% 
                         <p class="eyebrow">Computer Science Student · Footballer · Software &amp; Networking</p>
                         <p class="hero-name" aria-label="Moses B. Samah">Moses B. Samah</p>
                         <h1 class="big"><span>Join me,</span> <span>let's turn ideas</span> <span class="gold">into code!</span></h1>
+                        <p class="role-move" aria-label="Python and Java developer"><span><b>Python</b> and <b>Java</b> Developer</span></p>
                         <p class="lead">I'm <strong>Moses B. Samah</strong>, a BSCS student at the University of the Cordilleras, building skills in software development, IT and networking.</p>
-                        <ul class="facts">
-                            <li><b>Education</b><span>BSCS, University of the Cordilleras</span></li>
-                            <li><b>Focus</b><span>Software · IT · Networking</span></li>
-                            <li><b>Studying in</b><span>Baguio City</span></li>
-                        </ul>
-                        <div class="hero-cta">
-                            <a class="btn btn-gold" href="mailto:mosesbeyansamah@gmail.com">Contact me</a>
-                            <a class="btn btn-ghost mail-pill" href="mailto:mosesbeyansamah@gmail.com"><span aria-hidden="true">✉</span> mosesbeyansamah@gmail.com</a>
-                        </div>
                     </div>
                     <figure class="hero-photo">
                         <i class="blob" aria-hidden="true"></i>
@@ -1171,12 +1183,7 @@ body[data-page="achievements"] { background: radial-gradient(900px 500px at 15% 
                     </figure>
                 </section>
 
-                <div class="scoreboard" aria-label="Football career highlights">
-                    <span class="sb-tag">⚽ Highlights</span>
-                    <span class="sb-item"><b>2020</b> Best Player</span>
-                    <span class="sb-item"><b>2023</b> MVP · UNILAK</span>
-                    <span class="sb-item"><b>2024</b> Dream Team</span>
-                </div>
+                
 
                 <section class="deal" aria-labelledby="dealTitle">
                     <div class="deal-head">
